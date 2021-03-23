@@ -1,0 +1,112 @@
+
+@media screen and (min-width: 320px) {
+  #nextWeek{
+    position: relative;
+    margin-top: 350px;
+  }
+
+  #pin{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+  }
+
+  #place{
+    font-size: 28px;
+  }
+
+  #temp{
+    position: relative;
+    font-size: 9vw;
+  }
+
+  #des{
+    position: relative;
+    font-size: 4vw;
+  }
+
+  #source{
+    position: relative;
+    font-size: 3vw;
+    top: -50px;
+  }
+
+  #sourceIcon{
+    position: relative;
+    top: 2px;
+  }
+
+  #forecastNextHour{
+    position: relative;
+    top: 200px;
+    font-size: 3vw;
+  }
+
+  #info{
+    font-size: 16px;
+    position: relative;
+    top: 230px;
+  }
+
+  .nextHours{
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #pin{
+    width: 50px;
+    height: 50px;
+  }
+
+  #temp{
+    color: cyan;
+  }
+
+  .today{
+    font-size: 6vw;
+  }
+}
+
+.clear_sky{
+  background: url("../../assets/img/sun.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.few_clouds{
+  background: url("../../assets/img/cloud-sunMore.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.scattered_clouds{
+  background: url("../../assets/img/cloud.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.broken_clouds{
+  background: url("../../assets/img/cloud.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.rain{
+  background: url("../../assets/img/rain.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.mist{
+  background: url("../../assets/img/mist.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}
+
+.any{
+  background: url("../../assets/img/any.png") no-repeat;
+  background-position: center;
+  background-size: 200px 200px;
+}

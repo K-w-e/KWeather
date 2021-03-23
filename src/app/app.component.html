@@ -1,0 +1,29 @@
+<ion-app id="test" class="lightMode">
+  <ion-menu side="start" type="push" (ionDidOpen)="menuOpened()">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Settings</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <span id="list">
+          <p style="padding-left: 20px">Lista città salvate: <ion-icon name="cog" (click)="remove()"></ion-icon><br></p>
+          <ion-list>
+            <ion-item *ngFor="let city of cities; let i = index">
+              <ion-label (click)="cityClick(city)">{{city}}: <ion-icon name="close" (click)="removeCity(city)" class="btn remove"></ion-icon><span style="float: right;">{{temperature[i]}}</span>       
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </span>
+      </ion-list>
+      <br><br>
+      <ion-item>
+        <ion-label>Tema scuro</ion-label>
+        <ion-toggle slot="end" id="theme" (click)="changeStyle()"></ion-toggle>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content1" main></ion-router-outlet>
+</ion-app>

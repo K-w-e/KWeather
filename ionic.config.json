@@ -1,0 +1,7 @@
+{
+  "name": "Meteo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

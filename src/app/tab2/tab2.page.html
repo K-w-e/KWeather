@@ -1,0 +1,62 @@
+<ion-app class="lightMode" id="app">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <ion-icon name="menu" (click)="toggleMenu()" style="float: left;"></ion-icon>
+        <ion-icon name="search" (click)="openModal()" id="openModal"></ion-icon>
+      </ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+  <ion-content class="content ion-padding">  
+
+  <ion-icon name="pin" id="pin"></ion-icon>
+    <div class="today" id="today">
+      <span id="place" *ngIf="atemperature$ | async as temp">{{ temp.name }}</span>
+      <br>
+      <span id="temp">{{ temperatureToday }}<br>
+        <span id="des">{{ descriptionToday }}</span><br>
+          <span id="source"><ion-icon name="information-circle" id="sourceIcon"></ion-icon>OpenWeatherMap</span>
+          <div id="yesterday"> Yesterday: <br> {{temperatureYesterday}} <br> {{descriptionYesterday}} </div>
+          <span id="forecastNextHour">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-segment scrollable>
+                      <ion-segment *ngFor="let giorno of giorni">
+                        <div class="nextHours">
+                          <ion-label>{{giorno.getTimeString()}}</ion-label><br>
+                          <ion-label><img src={{giorno.getIcon()}}/></ion-label><br>
+                          <ion-label>{{giorno.getTemp()}}</ion-label><br>                          
+                        </div>
+                      </ion-segment>
+                    </ion-segment>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </span>
+            
+            <span id="info">
+              <ion-grid>
+                <ion-row>
+                  <ion-col *ngIf="atemperature$ | async as temp">
+                    Umidità: {{temp.main.humidity}}%
+                  </ion-col>
+                  <ion-col *ngIf="atemperature$ | async as temp">
+                    Pressione: {{temp.main.pressure}} hPa
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col *ngIf="atemperature$ | async as temp">
+                    Vento: {{temp.wind.speed}} km/h
+                  </ion-col>
+                  <ion-col>
+                    Indice qualità aria: {{airQuality}}
+                  </ion-col>
+                </ion-row>
+              </ion-grid>       
+            </span>
+        </span>
+      </div>
+</ion-content>
+</ion-app>
